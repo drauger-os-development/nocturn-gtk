@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Nocturn for Strigoi
+Comment=GTK Theme for Drauger OS Strigoi based off of Lim Red Dark
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Lim Red Dark
+MetacityTheme=Lim Red Dark
+IconTheme=Luna-Dark
+CursorTheme=Luna
+CursorSize=24
