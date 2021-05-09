@@ -304,7 +304,7 @@ messagedialog .titlebar:backdrop,
 messagedialog .titlebar.default-decoration:backdrop {
 	background-color: @theme_bg_color;
 	color: @theme_fg_color;
-	border: 1px dashed #ff3939;
+	border: 1px transparent;
 	background-image: none;
 	}
 	
