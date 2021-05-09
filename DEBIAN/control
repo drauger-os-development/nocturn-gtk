@@ -1,0 +1,10 @@
+Package: nocturn-gtk-theme
+Version: 0.0.1
+Maintainer: Thomas Castleman <contact@draugeros.org>
+Section: graphics
+Homepage: https://github.com/drauger-os-development/nocturn-gtk
+Architecture: all
+Priority: optional
+Depends: gtk2-engines-pixbuf (>=2.24.32-1ubuntu1), gtk2-engines-murrine (>=0.98.2-2ubuntu1)
+Description: Nocturn GTK theme
+ Drauger OS GTK theme for 7.6 (Strigoi) and newer. Dark theme with red and grey accents, designed to match the aesthetic of the website. Based off of the Lim-Red theme, but without unnecessary code (streamlined just for XFCE), and with custom colors, animations.
