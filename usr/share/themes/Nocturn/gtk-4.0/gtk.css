@@ -370,19 +370,21 @@ button.destructive-action
 * {
 	background-origin: border-box;
 	background-clip: padding-box;
-	-GtkToolButton-icon-spacing: 4;
+	/* COMMENTED OUT FOR GTK 4.0 */
+	/* -GtkToolButton-icon-spacing: 4;
 	-GtkTextView-error-underline-color: @error_color;
 	-GtkScrolledWindow-scrollbar-spacing: 0;
 	-GtkToolItemGroup-expander-size: 11;
 	-GtkWidget-text-handle-width: 20;
 	-GtkWidget-text-handle-height: 20;
 	-GtkDialog-button-spacing: 4;
-	-GtkDialog-action-area-border: 0;
+	-GtkDialog-action-area-border: 0; */
 	outline-color: alpha(currentcolor,0.3);
 	outline-style: dashed;
 	outline-offset: -3px;
 	outline-width: 1px;
-	-gtk-outline-radius: 3.0px;
+	/* COMMENTED OUT FOR GTK 4.0 */
+	/* -gtk-outline-radius: 3.0px; */
 }
 
 .background{background-color: @theme_bg_color; color: @theme_fg_color;}
@@ -611,7 +613,10 @@ window.background.csd > box.horizontal > stack.background > widget > box.vertica
 
 label { caret-color: currentColor; }
 
-*:disabled {-gtk-icon-effect: dim;}
+*:disabled {
+	/* COMMENTED OUT FOR GTK 4.0 */
+	/* -gtk-icon-effect: dim; */
+}
 
 .dim-label, label.separator, popover label.separator,
 popover.background label.separator, headerbar .subtitle,
@@ -791,7 +796,8 @@ scrolledwindow viewport.frame , statusbar frame{
 }
 
 scrolledwindow overshoot.top {
-	background-image: -gtk-gradient(radial, center top, 0, center top, 0.6, from(alpha(@selected_bg_color, 0.4)), to(alpha(@selected_bg_color, 0)));
+	background: @selected_bg_color;
+	background: radial-gradient(circle, alpha(@selected_bg_color, 0.4), alpha(@selected_bg_color, 0));
 	background-size: 100% 60%;
 	background-repeat: no-repeat;
 	background-position: center top;
@@ -801,7 +807,8 @@ scrolledwindow overshoot.top {
 }
 
 scrolledwindow overshoot.bottom {
-	background-image: -gtk-gradient(radial, center bottom, 0, center bottom, 0.6, from(alpha(@selected_bg_color, 0.4)), to(alpha(@selected_bg_color, 0)));
+	background: @selected_bg_color;
+	background: radial-gradient(circle, alpha(@selected_bg_color, 0.4), alpha(@selected_bg_color, 0));
 	background-size: 100% 60%;
 	background-repeat: no-repeat;
 	background-position: center bottom;
@@ -811,7 +818,8 @@ scrolledwindow overshoot.bottom {
 }
 
 scrolledwindow overshoot.left {
-	background-image: -gtk-gradient(radial, left center, 0, left center, 0.6, from(alpha(@selected_bg_color, 0.4)), to(alpha(@selected_bg_color, 0)));
+	background: @selected_bg_color;
+	background: radial-gradient(circle, alpha(@selected_bg_color, 0.4), alpha(@selected_bg_color, 0));
 	background-size: 60% 100%;
 	background-repeat: no-repeat;
 	background-position: left center;
@@ -821,7 +829,8 @@ scrolledwindow overshoot.left {
 }
 
 scrolledwindow overshoot.right {
-	background-image: -gtk-gradient(radial, right center, 0, right center, 0.6, from(alpha(@selected_bg_color, 0.4)), to(alpha(@selected_bg_color, 0)));
+	background: @selected_bg_color;
+	background: radial-gradient(circle, alpha(@selected_bg_color, 0.4), alpha(@selected_bg_color, 0));
 	background-size: 60% 100%;
 	background-repeat: no-repeat;
 	background-position: right center;
@@ -1043,7 +1052,14 @@ notebook > header.right {
 	border-left: 1px solid @borders;
 }
 
-notebook tab{padding: 3px; margin: 0px; color: @insensitive_fg_color; font-weight: bold; border-radius: 0px; transition: all 200ms ease-out; -gtk-outline-radius: 3.0px;}
+notebook tab {
+	padding: 3px;
+	margin: 0px;
+	color: @insensitive_fg_color;
+	font-weight: bold;
+	border-radius: 0px;
+	transition: all 200ms ease-out;
+}
 
 notebook header button {min-width: 20px;}
 
@@ -1092,7 +1108,8 @@ infobar label:disabled{color: alpha(currentcolor,0.5);}
  ************/
 
 toolbar {
-	-GtkWidget-window-dragging: false;
+	/* COMMENTED OUT FOR GTK 4.0 */
+	/* -GtkWidget-window-dragging: false; */
 	padding: 4px;
 	border-style: solid;
 	border-color: @borders;
@@ -1422,7 +1439,12 @@ Gtkbutton:hover {
 
 /* Flat Button */
 
-.sidebar-button.image-button { border: none; border-radius: 9999px; -gtk-outline-radius: 9999px;}
+.sidebar-button.image-button {
+	border: none;
+	border-radius: 9999px;
+	/* COMMENTED OUT FOR GTK 4.0 */
+	/* -gtk-outline-radius: 9999px; */
+}
 .titlebar button.sources-button.flat{padding: 2px;}
 
 button.flat,
@@ -1818,7 +1840,11 @@ stackswitcher button.text-button {	min-width: 90px;}
 
 stackswitcher button.circular, stackswitcher button.nautilus-circular-button.image-button {	min-width: 0;}
 
-button.circular{ border-radius: 9999px; -gtk-outline-radius: 9999px;}
+button.circular {
+	border-radius: 9999px;
+	/* COMMENTED OUT FOR GTK 4.0 */
+	/* -gtk-outline-radius: 9999px; */
+}
 
 /* Links */
 
@@ -2211,11 +2237,6 @@ scrollbar {
 	margin: 0;
 }
 
-* {
-	-GtkScrollbar-has-backward-stepper: false;
-	-GtkScrollbar-has-forward-stepper: false;
-}
-
 scrollbar slider {
 	transition: all 180ms cubic-bezier(0, 0, 0.2, 1), margin 0, border-width 0;
 	min-width: 12px;
@@ -2281,7 +2302,8 @@ popover.background,
 
 menubar,
 .menubar {
-	-GtkWidget-window-dragging: true;
+	/* COMMENTED OUT FOR GTK 4.0 */
+	/* -GtkWidget-window-dragging: true; */
 	padding: 0px;
 }
 
@@ -2606,7 +2628,8 @@ toolbar.osd button:not(.flat):disabled
 
 .needs-attention > label{
  animation: needs_attention 150ms ease-in;
- background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(@textColorPrimary), to(transparent)), -gtk-gradient(radial, center center, 0, center center, 0.5, to(transparent), to(transparent));
+ /* COMMENTED OUT FOR GTK 4.0 */
+ /* background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(@textColorPrimary), to(transparent)), -gtk-gradient(radial, center center, 0, center center, 0.5, to(transparent), to(transparent)); */
  background-size: 6px 6px, 6px 6px;
  background-repeat: no-repeat; background-position: right 3px, right 4px;
 }
@@ -2794,8 +2817,9 @@ XfdesktopIconView.view:active , XfdesktopIconView.view .label:active{background:
 
 .raven{background-color: @panel_bg; box-shadow: none; color: @panel_fg;}
 
-.raven stack .frame{ padding: 8px}
-.raven .raven-header.top stackswitcher.linked{ padding: 4px}
+.raven stack .frame{ padding: 8px;}
+/* COMMENTED OUT FOR GTK 4.0 */
+/* .raven .raven-header.top stackswitcher.linked{padding: 4px;} */
 
 .raven-header{font-weight: bold;}
 
@@ -2863,12 +2887,13 @@ window box.vertical scrolledwindow .frame .raven-background stack list
  ********/
 
 .places-treeview {
-  -NemoPlacesTreeView-disk-full-bg-color: mix(@theme_bg_color,@theme_fg_color,0.3);
+  /* COMMENTED OUT FOR GTK 4.0 */
+  /* -NemoPlacesTreeView-disk-full-bg-color: mix(@theme_bg_color,@theme_fg_color,0.3);
   -NemoPlacesTreeView-disk-full-fg-color: @theme_fg_color;
   -NemoPlacesTreeView-disk-full-bar-width: 2px;
   -NemoPlacesTreeView-disk-full-bar-radius: 0;
   -NemoPlacesTreeView-disk-full-bottom-padding: 1px;
-  -NemoPlacesTreeView-disk-full-max-length: 80px;
+  -NemoPlacesTreeView-disk-full-max-length: 80px; */
 }
 
 .nemo-window .nemo-places-sidebar.frame {border-width: 0;}
