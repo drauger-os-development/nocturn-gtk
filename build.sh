@@ -45,9 +45,6 @@ fi
 if [ -d sbin ]; then
 	cp -R sbin ../"$FOLDER"/sbin
 fi
-if [ -d var ]; then
-	cp -R var ../"$FOLDER"/var
-fi
 if [ -d opt ]; then
 	cp -R opt ../"$FOLDER"/opt
 fi
@@ -57,6 +54,7 @@ fi
 cp -R DEBIAN ../"$FOLDER"/DEBIAN
 cd ..
 #DELETE STUFF HERE
+
 #build the shit
 dpkg-deb --build "$FOLDER"
 rm -rf "$FOLDER"
